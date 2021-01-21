@@ -1,0 +1,89 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(68, 68, 68);
+}
+.player{
+    background-color: lightblue;
+}
+.bot{
+    background-color: lightsalmon;
+}
+.game{
+    /*background-color: rgb(252, 228, 225);*/
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    justify-items: center;
+}
+.game div{
+    margin-top: 60px;
+    position: absolute;
+    width: 100px; 
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 5px;  
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.player:hover{
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+#scissorsP{
+    top: 400px;
+    left: 59%;
+}
+#paperP{ 
+    top: 400px;
+    left: 46.5%;
+}
+#rockP{
+    top: 400px;
+    left: 34.5%;
+}
+#scissorsB{
+    top: 100px;
+    left: 59%;
+}
+#paperB{ 
+    top: 100px;
+    left: 46.5%;
+}
+#rockB{
+    top: 100px;
+    left: 34.5%;
+}
+#span{
+    margin-top: 70%;
+    left: 42%;
+    display: inline-block;
+    color: white;
+}
+#playerWin{
+    display: inline;
+    position: absolute;
+    left: 34.5%;
+    color:white;
+    margin-top: 600px;
+}
+#playerWin{
+    display: inline;
+    position: absolute;
+    left: 34.5%;
+    color:white;
+    margin-top: 600px;
+}
+#botWin {
+    display: inline;
+    position: absolute;
+    left: 34.5%;
+    color:white;
+    margin-top: 100px;
+}
