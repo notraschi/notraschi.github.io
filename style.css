@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
+/* basics */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+}
+input{
+    font-weight: bolder;
+    background-color: darkorange;
+}
+/* defaults */
+#container{
+    background-color: cornflowerblue;
+    display: flex;
+}
+#cookie {
+    height: 487.5px;
+    width: 310px;
+    position: absolute;
+    z-index: -1;
+}
+.animate{
+    animation: cookie 300ms;
+}
+@keyframes cookie{
+    0%{height: 487.5px;}
+    50%{height: 437.5px;}
+    100%{height: 487.5px;}
+}
+#total{
+    position: absolute;
+    left: 5%;
+    top: 65%;
+}
+/* powerups and upgrades */
+#powerups{
+    background-color: rgb(252, 236, 220);
+    width: 35%;
+    float: left;
+    margin-left: 310px;
+    height: 100%;
+}
+#upgrades{
+    background-color: rgb(252, 236, 220);
+    width: 35%;
+    float: right;
+    margin-right: 5%;
+    height: 100%;
+}
+.powerup{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 25px;
+}
+.upgrade {
+    text-align: center;
+    width: 90%;
+    margin-top: 25px;
+    margin-left: 5%;
+}
