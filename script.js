@@ -4,7 +4,7 @@ $(document).ready(function () {
     var cookies = 0
     var cps = 0
 
-    //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s
+    //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s, p il moltip. del prezzo
     var nsami = 0
     var msami = 0
     var vsami = 10
@@ -38,7 +38,9 @@ $(document).ready(function () {
             nsami++;
             cps += vsami
             $('#nsami').html('n di sami: ' + nsami);
-            sami()
+            if (nsami == 1){
+                sami();
+            }
         }        
     });
 
@@ -64,7 +66,9 @@ $(document).ready(function () {
             nfattoria++;
             cps += vfattoria
             $('#nfattoria').html('n di fattorie: ' + nfattoria);
-            fattoria()
+            if (nfattoria == 1){
+                fattoria();
+            }
         }        
     });
 
@@ -90,7 +94,9 @@ $(document).ready(function () {
             nfabbrica++;
             cps += vfabbrica;
             $('#nfabbrica').html('n di fattorie: ' + nfabbrica);
-            fabbrica()
+            if (nfabbrica == 1){
+                fabbrica();
+            }
         }        
     });
 
