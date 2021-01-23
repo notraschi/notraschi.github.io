@@ -1,7 +1,8 @@
 $(document).ready(function () {
     
-    //i mandarini totali
+    //i mandarini totali e al secondo
     var cookies = 0
+    var cps = 0
 
     //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s
     var nsami = 0
@@ -35,6 +36,7 @@ $(document).ready(function () {
             $('#sami').attr('value', 'compra un sami per ' + (250 * psami) + ' mandarini!');
             $('#total').html('mandarini counter: ' + cookies);
             nsami++;
+            cps += vsami
             $('#nsami').html('n di sami: ' + nsami);
             sami()
         }        
@@ -46,6 +48,7 @@ $(document).ready(function () {
         $('#total').html('mandarini counter: ' + cookies);
         msami += nsami * vsami;
         $('#msami').html('mandarini fatti dai sami: ' + msami);
+        $('#cps').html('mandarini al secondo: ' + cps);
         setTimeout(function(){
             sami();    
         }, 1000);
@@ -59,6 +62,7 @@ $(document).ready(function () {
             $('#fattoria').attr('value', 'compra una fattoria per ' + (10000 * pfattoria) + ' mandarini!');
             $('#total').html('mandarini counter: ' + cookies);
             nfattoria++;
+            cps += vfattoria
             $('#nfattoria').html('n di fattorie: ' + nfattoria);
             fattoria()
         }        
@@ -70,6 +74,7 @@ $(document).ready(function () {
         $('#total').html('mandarini counter: ' + cookies);
         mfattoria += nfattoria * vfattoria;
         $('#mfattoria').html('mandarini fatti dalle fattorie: ' + mfattoria);
+        $('#cps').html('mandarini al secondo: ' + cps);
         setTimeout(function(){
             fattoria();    
         }, 1000);
@@ -83,6 +88,7 @@ $(document).ready(function () {
             $('#fabbrica').attr('value', 'compra una fabbrica per ' + (22500 * pfabbrica) + ' mandarini!');
             $('#total').html('mandarini counter: ' + cookies);
             nfabbrica++;
+            cps += vfabbrica;
             $('#nfabbrica').html('n di fattorie: ' + nfabbrica);
             fabbrica()
         }        
@@ -94,6 +100,7 @@ $(document).ready(function () {
         $('#total').html('mandarini counter: ' + cookies);
         mfabbrica += nfabbrica * vfabbrica;
         $('#mfabbrica').html('mandarini fatti dalle fattorie: ' + mfabbrica);
+        $('#cps').html('mandarini al secondo: ' + cps);
         setTimeout(function(){
             fabbrica();    
         }, 1000);
@@ -106,7 +113,8 @@ $(document).ready(function () {
     $('#sami1').click(function () { 
         if (cookies >= 9000 && nsami > 0) {  
             cookies -= 9000
-            vsami = 20; 
+            vsami = 20;
+            cps += nsami * 10;
             $(this).prop('disabled', true);
             $('#sami2').prop('disabled', false)
         }  
@@ -117,6 +125,7 @@ $(document).ready(function () {
         if (cookies >= 19000 && nsami > 0) {  
             cookies -= 19000
             vsami = 40; 
+            cps += nsami * 20
             $(this).prop('disabled', true)
             $('#sami3').prop('disabled', false)
         } 
@@ -127,6 +136,7 @@ $(document).ready(function () {
         if (cookies >= 35000 && nsami > 0) {  
             cookies -= 35000
             vsami = 100; 
+            cps += nsami * 60
             $(this).prop('disabled', true)
             $('#sami4').prop('disabled', false)
         } 
@@ -137,6 +147,7 @@ $(document).ready(function () {
         if (cookies >= 50000 && nsami > 0) {  
             cookies -= 50000
             vsami = 150; 
+            cps += nsami * 50
             $(this).prop('disabled', true)
             $('#sami5').prop('disabled', false)
         } 
@@ -147,6 +158,7 @@ $(document).ready(function () {
         if (cookies >= 100000 && nsami > 0) {  
             cookies -= 100000
             vsami = 200; 
+            cps += nsami * 50
             $(this).prop('disabled', true)
         } 
     });
@@ -156,6 +168,7 @@ $(document).ready(function () {
         if (cookies >= 21000 && nfattoria > 0) {  
             cookies -= 21000
             vfattoria = 80; 
+            cps += nfattoria * 40
             $(this).prop('disabled', true);
             $('#fattoria2').prop('disabled', false)
         }  
@@ -166,6 +179,7 @@ $(document).ready(function () {
         if (cookies >= 35000 && nfattoria > 0) {  
             cookies -= 35000
             vfattoria = 150; 
+            cps += nfattoria * 70
             $(this).prop('disabled', true);
             $('#fattoria3').prop('disabled', false)
         }  
@@ -176,6 +190,7 @@ $(document).ready(function () {
         if (cookies >= 60000 && nfattoria > 0) {  
             cookies -= 60000
             vfattoria = 280; 
+            cps += nfattoria * 130
             $(this).prop('disabled', true);
             $('#fattoria4').prop('disabled', false)
         }  
@@ -185,7 +200,8 @@ $(document).ready(function () {
     $('#fattoria4').click(function () { 
         if (cookies >= 100000 && nfattoria > 0) {  
             cookies -= 100000
-            vfattoria = 550; 
+            vfattoria = 550;
+            cps += nfattoria * 270 
             $(this).prop('disabled', true);
             $('#fattoria5').prop('disabled', false)
         }  
@@ -195,7 +211,8 @@ $(document).ready(function () {
     $('#fattoria5').click(function () { 
         if (cookies >= 200000 && nfattoria > 0) {  
             cookies -= 200000
-            vfattoria = 1000; 
+            vfattoria = 1000;
+            cps += nfattoria * 450 
             $(this).prop('disabled', true);
         }  
     });
