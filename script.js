@@ -4,21 +4,27 @@ $(document).ready(function () {
     var cookies = 0
     var cps = 0
 
-    //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s, p il moltip. del prezzo
+    //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s, p il moltip. del prezzo, u per costo dell'upgrade
     var nsami = 0
     var msami = 0
     var vsami = 10
     var psami = 1
+    var usami = 9000
     var nfattoria = 0
     var mfattoria = 0
     var vfattoria = 40
     var pfattoria = 1
+    var ufattoria = 21000
     var nfabbrica = 0
     var mfabbrica = 0
     var vfabbrica = 90
     var pfabbrica = 1
+    var ufabbrica = 45000
     
-    //se clicchi sul mandarino
+    //main()
+    main();
+
+    //se clicchi sul mandarinoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
     $('#cookie').click(function () { 
         $(this).attr('class', 'animate')
         cookies++;
@@ -26,17 +32,16 @@ $(document).ready(function () {
         setTimeout(function(){
             $('#cookie').removeAttr('class');
         }, 350);
-    });
+    });9
 
-    //se clicchi compra un sami
+    //se clicchi compra un samiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
     $('#sami').click(function () { 
         if (cookies >= 250 * psami){
             cookies -= 250 * psami;
             psami = psami * 2;
-            $('#sami').attr('value', 'compra un sami per ' + (250 * psami) + ' mandarini!');
-            $('#total').html('mandarini counter: ' + cookies);
             nsami++;
             cps += vsami
+            $('#cost').html('Ti costerà ' + (250 * psami) + ' mandarini');
             $('#nsami').html('n di sami: ' + nsami);
             if (nsami == 1){
                 sami();
@@ -44,27 +49,31 @@ $(document).ready(function () {
         }        
     });
 
-    //cose fatte in automatico da un sami
     function sami() {
-        cookies += nsami * vsami;
-        $('#total').html('mandarini counter: ' + cookies);
         msami += nsami * vsami;
-        $('#msami').html('mandarini fatti dai sami: ' + msami);
-        $('#cps').html('mandarini al secondo: ' + cps);
+        $('#msami').html('mandarini fatti dai sami: ' + msami);        
         setTimeout(function(){
             sami();    
         }, 1000);
     }
+    $('#sami').hover(function () {
+            $('#details').css('display', 'unset');
+            $('#text').html('Che fai? Compri un sami?');
+            $('#cost').html('Ti costerà ' + (250 * psami) + ' mandarini');
+            $('#boost').html('Il tuo sami produrrà ' + vsami + ' mandarini/s');
+        }, function () {
+            $('#details').css('display', 'none');
+        }
+    );
 
-    //se clicchi compra una fattoria
+    //se clicchi compra una fattoriaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     $('#fattoria').click(function () { 
         if (cookies >= 10000 * pfattoria){
             cookies -= 10000 * pfattoria;
             pfattoria = pfattoria * 2;
-            $('#fattoria').attr('value', 'compra una fattoria per ' + (10000 * pfattoria) + ' mandarini!');
-            $('#total').html('mandarini counter: ' + cookies);
             nfattoria++;
             cps += vfattoria
+            $('#cost').html('Ti costerà ' + (10000 * pfattoria) + ' mandarini');
             $('#nfattoria').html('n di fattorie: ' + nfattoria);
             if (nfattoria == 1){
                 fattoria();
@@ -72,27 +81,31 @@ $(document).ready(function () {
         }        
     });
 
-    //cose fatte in automatico da una fattoria
     function fattoria() {
-        cookies += nfattoria * vfattoria;
-        $('#total').html('mandarini counter: ' + cookies);
         mfattoria += nfattoria * vfattoria;
-        $('#mfattoria').html('mandarini fatti dalle fattorie: ' + mfattoria);
-        $('#cps').html('mandarini al secondo: ' + cps);
+        $('#mfattoria').html('mandarini fatti dalle fattorie: ' + mfattoria);        
         setTimeout(function(){
             fattoria();    
         }, 1000);
     }
+    $('#fattoria').hover(function () {
+            $('#details').css('display', 'unset');
+            $('#text').html('Che fai? Compri una fattoria?');
+            $('#cost').html('Ti costerà ' + (10000 * pfattoria) + ' mandarini');
+            $('#boost').html('La tua fattoria produrrà ' + vfattoria + ' mandarini/s');
+        }, function () {
+            $('#details').css('display', 'none');
+        }
+    );
 
-    //se clicchi compra una fabbrica
+    // fabbricaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     $('#fabbrica').click(function () { 
         if (cookies >= 22500 * pfabbrica){
             cookies -= 22500 * pfabbrica;
             pfabbrica = pfabbrica * 2;
-            $('#fabbrica').attr('value', 'compra una fabbrica per ' + (22500 * pfabbrica) + ' mandarini!');
-            $('#total').html('mandarini counter: ' + cookies);
             nfabbrica++;
             cps += vfabbrica;
+            $('#cost').html('Ti costerà ' + (22500 * pfabbrica) + ' mandarini');
             $('#nfabbrica').html('n di fattorie: ' + nfabbrica);
             if (nfabbrica == 1){
                 fabbrica();
@@ -100,128 +113,89 @@ $(document).ready(function () {
         }        
     });
 
-    //cose fatte in automatico da una fabbrica
     function fabbrica() {
-        cookies += nfabbrica * vfabbrica;
-        $('#total').html('mandarini counter: ' + cookies);
         mfabbrica += nfabbrica * vfabbrica;
-        $('#mfabbrica').html('mandarini fatti dalle fattorie: ' + mfabbrica);
-        $('#cps').html('mandarini al secondo: ' + cps);
+        $('#mfabbrica').html('mandarini fatti dalle fattorie: ' + mfabbrica);        
         setTimeout(function(){
             fabbrica();    
         }, 1000);
     }
+    $('#fabbrica').hover(function () {
+            $('#details').css('display', 'unset');
+            $('#text').html('Che fai? Compri una fabbrica?');
+            $('#cost').html('Ti costerà ' + (22500 * pfabbrica) + ' mandarini');
+            $('#boost').html('La tua fabbrica produrrà ' + vfabbrica + ' mandarini/s');
+        }, function () {
+            $('#details').css('display', 'none');
+        }
+    );
+
+    // super ultra fighissima cookie updater funcition that is very complexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    function main() {
+        cookies += cps;
+        $('#total').html('mandarini counter: ' + cookies);
+        $('#cps').html('mandarini al secondo: ' + cps);
+        setTimeout(function () {
+            main()       
+        }, 1000)
+    }
 
     //mantieni il codice dei powerups sopra questo commento
-    //cose che succedono quando clicchi per comprare gli upgrades
+    //cose che succedono quando clicchi per comprare gli upgradessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 
-    //sami 1
-    $('#sami1').click(function () { 
-        if (cookies >= 9000 && nsami > 0) {  
-            cookies -= 9000
-            vsami = 20;
-            cps += nsami * 10;
-            $(this).prop('disabled', true);
-            $('#sami2').prop('disabled', false)
-        }  
+    $('#upgradesami').click(function () { 
+        if (cookies >= usami && nsami != 0) {
+            cookies -= usami
+            usami *= 2
+            vsami *= 2
+            $('#cost').html('Ti costerà ' + usami + ' mandarini');
+        }        
     });
+    $('#upgradesami').hover(function () {
+            $('#details').css('display', 'unset');
+            $('#text').html('Vuoi far evolvere sami, eh?');
+            $('#cost').html('Ti costerà ' + usami + ' mandarini');
+            $('#boost').html('Sami produrrà il doppio dei mandarini/s');
+        }, function () {
+            $('#details').css('display', 'none');
+        }
+    );
 
-    //sami 2
-    $('#sami2').click(function () { 
-        if (cookies >= 19000 && nsami > 0) {  
-            cookies -= 19000
-            vsami = 40; 
-            cps += nsami * 20
-            $(this).prop('disabled', true)
-            $('#sami3').prop('disabled', false)
-        } 
+    $('#upgradefattoria').click(function () { 
+        if (cookies >= ufattoria && nfattoria != 0) {
+            cookies -= ufattoria
+            ufattoria *= 2
+            vfattoria *= 2
+            $('#cost').html('Ti costerà ' + ufattoria + ' mandarini');
+        }        
     });
+    $('#upgradefattoria').hover(function () {
+            $('#details').css('display', 'unset');
+            $('#text').html('Vuoi far evolvere le fattori, eh?');
+            $('#cost').html('Ti costerà ' + ufattoria + ' mandarini');
+            $('#boost').html('Le fattorie produrranno il doppio dei mandarini/s');
+        }, function () {
+            $('#details').css('display', 'none');
+        }
+    );
 
-    //sami 3
-    $('#sami3').click(function () { 
-        if (cookies >= 35000 && nsami > 0) {  
-            cookies -= 35000
-            vsami = 100; 
-            cps += nsami * 60
-            $(this).prop('disabled', true)
-            $('#sami4').prop('disabled', false)
-        } 
+    $('#upgradefabbrica').click(function () { 
+        if (cookies >= ufabbrica && nfabbrica != 0) {
+            cookies -= ufabbrica
+            ufabbrica *= 2
+            vfabbrica *= 2
+            $('#cost').html('Ti costerà ' + ufabbrica + ' mandarini');
+        }        
     });
+    $('#upgradefabbrica').hover(function () {
+            $('#details').css('display', 'unset');
+            $('#text').html('Vuoi far evolvere le fabbriche, eh?');
+            $('#cost').html('Ti costerà ' + ufabbrica + ' mandarini');
+            $('#boost').html('Le fabbriche produrranno il doppio dei mandarini/s');
+        }, function () {
+            $('#details').css('display', 'none');
+        }
+    );
 
-    //sami 4
-    $('#sami4').click(function () { 
-        if (cookies >= 50000 && nsami > 0) {  
-            cookies -= 50000
-            vsami = 150; 
-            cps += nsami * 50
-            $(this).prop('disabled', true)
-            $('#sami5').prop('disabled', false)
-        } 
-    });
-
-    //sami 5
-    $('#sami5').click(function () { 
-        if (cookies >= 100000 && nsami > 0) {  
-            cookies -= 100000
-            vsami = 200; 
-            cps += nsami * 50
-            $(this).prop('disabled', true)
-        } 
-    });
- 
-    // fattorieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee fattoria1
-    $('#fattoria1').click(function () { 
-        if (cookies >= 21000 && nfattoria > 0) {  
-            cookies -= 21000
-            vfattoria = 80; 
-            cps += nfattoria * 40
-            $(this).prop('disabled', true);
-            $('#fattoria2').prop('disabled', false)
-        }  
-    });
-
-    //fattoria2
-    $('#fattoria2').click(function () { 
-        if (cookies >= 35000 && nfattoria > 0) {  
-            cookies -= 35000
-            vfattoria = 150; 
-            cps += nfattoria * 70
-            $(this).prop('disabled', true);
-            $('#fattoria3').prop('disabled', false)
-        }  
-    });
-
-    //fattoria3
-    $('#fattoria3').click(function () { 
-        if (cookies >= 60000 && nfattoria > 0) {  
-            cookies -= 60000
-            vfattoria = 280; 
-            cps += nfattoria * 130
-            $(this).prop('disabled', true);
-            $('#fattoria4').prop('disabled', false)
-        }  
-    });
-
-    //fattoria4
-    $('#fattoria4').click(function () { 
-        if (cookies >= 100000 && nfattoria > 0) {  
-            cookies -= 100000
-            vfattoria = 550;
-            cps += nfattoria * 270 
-            $(this).prop('disabled', true);
-            $('#fattoria5').prop('disabled', false)
-        }  
-    });
-
-    //fattoria5
-    $('#fattoria5').click(function () { 
-        if (cookies >= 200000 && nfattoria > 0) {  
-            cookies -= 200000
-            vfattoria = 1000;
-            cps += nfattoria * 450 
-            $(this).prop('disabled', true);
-        }  
-    });
-
-    // mantieni il codice delgi upgrades sopra questo commento
+    // mantieni il codice degli upgrades sopra questo commento
 });

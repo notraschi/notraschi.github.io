@@ -12,26 +12,34 @@
 
       <div id="default">
         
-        <img src="mandarino.jpg" id="cookie">
+        <div class="default">  
+        <img src="mandarino.jpg" id="cookie" class="default">
                 
         <br>
-        <span class="span" id="total">mandarini counter: 0</span>
+        <span class="default" id="total">mandarini counter: 0</span>
         <br>
-        <span class="span" id="cps">mandarini al secondo: 0</span>
+        <span class="default" id="cps">mandarini al secondo: 0</span>
+        </div>
+
+        <div id="details">
+          <span id="text">You wanna upgrade ur sami huh</span><br>
+          <span id="cost">gonna cost u much ya know</span><br>
+          <span id="boost">bot it'll boost ur cps</span><br>
+        </div>
 
       </div>
 
       <div id="powerups">
 
-        <input type="button" value="compra un sami per 250 mandarini!" class="powerup" id="sami" title="un sami produce 10 mandarini al seecondo!"><br>
+        <input type="button" value="compra un sami!" class="powerup" id="sami"><br>
         <span class="powerup" id="nsami">n di sami: 0</span><br>
         <span class="powerup" id="msami">mandarini fatti dai sami: 0</span><br>
 
-        <input type="button" value="compra una fattoria per 10000 mandarini!" class="powerup" id="fattoria" title="una fattoria produce 40 mandarini al secondo!"><br>
+        <input type="button" value="compra una fattoria!" class="powerup" id="fattoria"><br>
         <span class="powerup" id="nfattoria">n di fattorie: 0</span><br>
         <span class="powerup" id="mfattoria">mandarini fatti dalle fattorie: 0</span><br>
 
-        <input type="button" value="compra una fabbrica per 22500 mandarini!" class="powerup" id="fabbrica" title="una fabbrica produce 90 mandarini al secondo!"><br>
+        <input type="button" value="compra una fabbrica!" class="powerup" id="fabbrica"><br>
         <span class="powerup" id="nfabbrica">n di fabbriche: 0</span><br>
         <span class="powerup" id="mfabbrica">mandarini fatti dalle fabbriche: 0</span><br>
 
@@ -39,18 +47,10 @@
 
       <div id="upgrades">
 
-        <input type="button" value="sami upgrade 1: occhiali nuovi!" class="upgrade" id="sami1" title="produzione aumentata a 20 mandarini, per soli 9000 mandarini"><br>
-        <input type="button" value="sami upgrade 2: giubbotto supreme!" class="upgrade" id="sami2" disabled title="produzione aumentata a 40 mandarini, per soli 19000 mandarini">
-        <br><input type="button" value="sami upgrade 3: Drip King" class="upgrade" id="sami3" disabled title="produzione aumentata a 100 mandarini, per soli 35000 mandarini"><br>
-        <input type="button" value="sami upgrade 4: Super Sayan" class="upgrade" id="sami4" disabled title="produzione aumentata a 150 mandarini, per soli 50000 mandarini"><br>
-        <input type="button" value="sami upgrade 5: Final Form!" class="upgrade" id="sami5" disabled title="produzione aumentata a 200 mandarini, per soli 100000 mandarini"> 
-
-        <input type="button" value="fattoria upgrade 1: zappe in diamante!" class="upgrade" id="fattoria1" title="produzione aumentata a 80 mandarini, per soli 21000 mandarini"><br>
-        <input type="button" value="fattoria upgrade 2: OGMs" class="upgrade" id="fattoria2" disabled title="produzione aumentata a 150 mandarini, per soli 35000 mandarini">
-        <br><input type="button" value="fattoria upgrade 3: i maiali hanno le ali" class="upgrade" id="fattoria3" disabled title="produzione aumentata a 280 mandarini, per soli 60000 mandarini"><br>
-        <input type="button" value="fattoria upgrade 4: più OGM" class="upgrade" id="fattoria4" disabled title="produzione aumentata a 550 mandarini, per soli 100000 mandarini"><br>
-        <input type="button" value="fattoria upgrade 5: Final Form!" class="upgrade" id="fattoria5" disabled title="produzione aumentata a 1000 mandarini, per soli 200000 mandarini"> 
-
+        <input type="button" class="upgrade" id="upgradesami" value="fai evolvere sami!">
+        <input type="button" class="upgrade" id="upgradefattoria" value="fai evolvere le fattorie!">
+        <input type="button" class="upgrade" id="upgradefabbrica" value="fai evolvere le fabbriche!">
+       
       </div>
         
     </div>

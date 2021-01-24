@@ -24,7 +24,10 @@ input{
 #default{
     height: 100%;
     width: 22%;
+    min-width: 310px;
     float: left;
+}
+.default{
     text-align: center;
 }
 
@@ -48,7 +51,8 @@ input{
 #powerups{
     background-color: rgb(252, 236, 220);
     height: 100%;
-    width: 33%;
+    width: 40%;
+    min-width: 410px;
     float: left;
     text-align: center;
     border-left: 3vh solid white;
@@ -57,17 +61,39 @@ input{
 #upgrades{
     background-color: rgb(252, 236, 220);
     height: 100%;
-    width: 45%;
+    width: 38%;
+    min-width: 310px;
     float: left;
     text-align: center;
 }
 .powerup{
     text-align: center;
     width: 80%;
+    height: 25px;
     margin-top: 25px;
 }
 .upgrade {
     text-align: center;
+    height: 75px;
     width: 80%;
     margin-top: 25px;
+}
+/*the details in the bottom left*/
+#details{
+    background-color: darkorange;
+    border-radius: 5px;
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 150px;
+    width: 500px;
+    text-align: left;
+    display: none;
+}
+#details span{
+    display: inline-block;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 15px;
 }
