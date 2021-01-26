@@ -1,7 +1,7 @@
 $(document).ready(function () {
     
     //i mandarini totali e al secondo
-    var cookies = 1000000
+    var cookies = 0
     var cps = 0
 
     //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s, p il moltip. del prezzo, u per costo dell'upgrade
