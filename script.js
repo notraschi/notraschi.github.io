@@ -371,7 +371,7 @@ $(document).ready(function () {
     $('#upgradefattoria').click(function () { 
         if (cookies >= ufattoria && nfattoria != 0) {
             cookies -= ufattoria
-            cps += vfattoria * nfattvfattoria
+            cps += vfattoria * nfattoria
             ufattoria *= 2
             vfattoria *= 2
             $('#cost').html('Ti costerà ' + ufattoria + ' mandarini');
@@ -387,7 +387,7 @@ $(document).ready(function () {
     $('#upgradefabbrica').click(function () { 
         if (cookies >= ufabbrica && nfabbrica != 0) {
             cookies -= ufabbrica
-            cps += vfabbrica * nfabbvfabbrica
+            cps += vfabbrica * nfabbrica
             ufabbrica *= 2
             vfabbrica = vfabbrica * 2
             $('#cost').html('Ti costerà ' + ufabbrica + ' mandarini');
@@ -403,7 +403,7 @@ $(document).ready(function () {
     $('#upgradebidello').click(function () { 
         if (cookies >= ubidello && nbidello != 0) {
             cookies -= ubidello
-            cps += vbidello * nbidevbidello
+            cps += vbidello * nbidello
             ubidello *= 2
             vbidello = vbidello * 2
             $('#cost').html('Ti costerà ' + ubidello + ' mandarini');
