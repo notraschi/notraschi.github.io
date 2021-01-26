@@ -1,7 +1,7 @@
 $(document).ready(function () {
     
     //i mandarini totali e al secondo
-    var cookies = 0
+    var cookies = 1000000
     var cps = 0
 
     //tutte le variabili dei powerups, n sta per il numero dei powerup, m per i mandarini fatti, v per i mandarini/s, p il moltip. del prezzo, u per costo dell'upgrade
@@ -355,6 +355,7 @@ $(document).ready(function () {
     $('#upgradesami').click(function () { 
         if (cookies >= usami && nsami != 0) {
             cookies -= usami
+            cps += vsami * nsami
             usami *= 2
             vsami *= 2
             $('#cost').html('Ti costerà ' + usami + ' mandarini');
@@ -370,6 +371,7 @@ $(document).ready(function () {
     $('#upgradefattoria').click(function () { 
         if (cookies >= ufattoria && nfattoria != 0) {
             cookies -= ufattoria
+            cps += vfattoria * nfattvfattoria
             ufattoria *= 2
             vfattoria *= 2
             $('#cost').html('Ti costerà ' + ufattoria + ' mandarini');
@@ -385,6 +387,7 @@ $(document).ready(function () {
     $('#upgradefabbrica').click(function () { 
         if (cookies >= ufabbrica && nfabbrica != 0) {
             cookies -= ufabbrica
+            cps += vfabbrica * nfabbvfabbrica
             ufabbrica *= 2
             vfabbrica = vfabbrica * 2
             $('#cost').html('Ti costerà ' + ufabbrica + ' mandarini');
@@ -400,6 +403,7 @@ $(document).ready(function () {
     $('#upgradebidello').click(function () { 
         if (cookies >= ubidello && nbidello != 0) {
             cookies -= ubidello
+            cps += vbidello * nbidevbidello
             ubidello *= 2
             vbidello = vbidello * 2
             $('#cost').html('Ti costerà ' + ubidello + ' mandarini');
@@ -415,6 +419,7 @@ $(document).ready(function () {
     $('#upgradebiblioteca').click(function () { 
         if (cookies >= ubiblioteca && nbiblioteca != 0) {
             cookies -= ubiblioteca
+            cps += vbiblioteca * nbiblioteca
             ubiblioteca *= 2
             vbiblioteca = vbiblioteca * 2
             $('#cost').html('Ti costerà ' + ubiblioteca + ' mandarini');
@@ -430,6 +435,7 @@ $(document).ready(function () {
     $('#upgradepiramide').click(function () { 
         if (cookies >= upiramide && npiramide != 0) {
             cookies -= upiramide
+            cps += vpiramide * npiramide
             upiramide *= 2
             vpiramide = vpiramide * 2
             $('#cost').html('Ti costerà ' + upiramide + ' mandarini');
@@ -445,6 +451,7 @@ $(document).ready(function () {
     $('#upgradecaveau').click(function () { 
         if (cookies >= ucaveau && ncaveau != 0) {
             cookies -= ucaveau
+            cps += vcaveau * ncaveau
             ucaveau *= 2
             vcaveau = vcaveau * 2
             $('#cost').html('Ti costerà ' + ucaveau + ' mandarini');
@@ -460,6 +467,7 @@ $(document).ready(function () {
     $('#upgradelab').click(function () { 
         if (cookies >= ulab && nlab != 0) {
             cookies -= ulab
+            cps += vlab * nlab
             ulab *= 2
             vlab = vlab * 2
             $('#cost').html('Ti costerà ' + ulab + ' mandarini');
@@ -475,6 +483,7 @@ $(document).ready(function () {
     $('#upgradenether').click(function () { 
         if (cookies >= unether && nnether != 0) {
             cookies -= unether
+            cps += vnether * nnether
             unether *= 2
             vnether = vnether * 2
             $('#cost').html('Ti costerà ' + unether + ' mandarini');
@@ -489,7 +498,8 @@ $(document).ready(function () {
 
     $('#upgradeshrek').click(function () { 
         if (cookies >= ushrek && nshrek != 0) {
-            cookies -= ushrek
+            cookies -= ushrek           
+            cps += vshrek * nshrek
             ushrek *= 2
             vshrek = vshrek * 2
             $('#cost').html('Ti costerà ' + ushrek + ' mandarini');
