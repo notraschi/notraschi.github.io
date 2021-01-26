@@ -57,14 +57,16 @@ input{
     text-align: center;
     border-left: 3vh solid white;
     border-right: 3vh solid white;
+    overflow-y: scroll;
 }
 #upgrades{
     background-color: rgb(252, 236, 220);
     height: 100%;
     width: 38%;
-    min-width: 310px;
+    min-width: 410px;
     float: left;
     text-align: center;
+    overflow-y: scroll;
 }
 .powerup{
     text-align: center;
@@ -78,6 +80,8 @@ input{
     width: 80%;
     margin-top: 25px;
 }
+
+
 /*the details in the bottom left*/
 #details{
     background-color: darkorange;
@@ -91,9 +95,14 @@ input{
     text-align: left;
     display: none;
 }
+#description{
+    font-size: smaller;
+    color: rgb(53, 53, 53);
+}
 #details span{
     display: inline-block;
     text-align: left;
     margin-top: 15px;
     margin-left: 15px;
+    font-size: small;
 }
